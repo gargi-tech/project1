@@ -1,0 +1,32 @@
+<%= link_to "Back to List", controller: "book", action:'list1', class: "back-link" %>
+
+<div class ="Page New">
+	<h2> Create New Records</h2>
+
+	<%= form_for(:books, url: {controller:"book", action:'create'}) do |t|%>
+	 <table summary="Book form field">
+
+	 	<tr>
+				<th>
+					<label for ="bknm" ><b>Book Name</label></th>
+					<td> <%= t.text_field(:name) %></td>
+			</tr>
+
+			<tr>
+				<th>
+					<label for="authrnm"><b> Author Name</label></th>
+					<td> <%= t.text_field(:author)%></td>
+			</tr>
+
+		<tr>
+			<th>
+				<label for="prce"><b>Price</label></th>
+				<td> <%=t.text_field(:price)%></td>
+			</th>
+		</tr>
+	</table>
+	<div class="form-button">
+		<%= submit_tag("create book")%>
+	</div>
+	<% end %>
+</div>

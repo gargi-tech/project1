@@ -1,0 +1,62 @@
+<html>
+<head>
+	<style>
+		body
+		{
+			background-color:lightgray;
+			
+		}
+		h1
+		{
+			font-size:250%;
+			font-style:bold;
+			color:tomato;
+			text-align:center;
+		}
+		h4
+		{
+			font-size:190%;
+			text-align:center;
+		}
+
+	</style>
+</head>
+
+<body>
+	<h1>Book List</h1>
+
+	<% if @books.blank? %>
+	<p>There are not any books currently in the system.</p>
+	<% else %>
+	<!--<p>There are the current books in our system</p>-->
+
+	<table id="books" align="center">
+		<tr>
+			<th>Name</th>
+			<th>Actions</th>
+		</tr>
+
+		<h4>There are  <%= Book.count %> numbers of books</h4>
+		<% @books.each do |c| %>
+
+		<tr>
+			<td><<%= link_to c.name, {:action => 'show',:controller =>'book' , :id=> c.id} -%>
+
+			<td>
+				<button><%= link_to "Edit", action:'edit', id:c.id, class: "action edit"%></button>
+				<button><%= link_to "Delete", action:'delete', id: c.id, class: "action delete"%></button>
+			</td>
+
+		</td>
+	</tr>
+
+	<%end %>
+</table>
+<% end %>
+<div style="text-align:center">
+<p><button><%= link_to "Add new Book", {:action => 'new', :controller => 'book'  }%></p></button>
+</div>
+<!--<p><button><p><%= link_to "Edit", {:action => 'edit', :controller => 'book' }%></p></button>-->
+
+</body>
+</html>

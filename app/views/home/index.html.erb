@@ -1,0 +1,42 @@
+<!--<h1>Home#index</h1>-->
+<html>
+<head>
+	<style>
+		body
+		{
+			background-image:url("https://somethingoffreedom.com/wp-content/uploads/2017/07/Rio-de-Janeiro-1.jpg");
+			background-size:1400px 650px;
+			background-repeat:no-repeat;
+
+		}
+		h1{
+			font-size:70px;
+			font-style:bold;
+			font-family:Bodoni MT;
+			color:red;
+			text-align:center;
+		}
+		a{
+			font-size:20px;
+			color:red;
+			text-align:center;
+		}
+
+	</style>
+	<body>
+		<h1>Holiday Tours</h1>
+
+<!--<h1>Home Page</h1>-->
+<% if current_user %>
+Logged in as <%=current_user.email%>
+<%= link_to'Log Out',logout_path %>
+<% else %>
+<%=link_to 'Sign Up',signup_path %>or
+<%=link_to 'Log In',login_path %>
+<% end %>
+<p id='notice'><%= notice %></p>
+
+
+
+
+<!--<p>Find me in app/views/home/index.html.erb</p>-->

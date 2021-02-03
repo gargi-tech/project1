@@ -1,0 +1,62 @@
+<!--<html>
+<head>
+	<style>
+		h1
+		{
+			text-align: center;
+			font-variant: normal;
+			font-family: Times New Roman;
+			color:#DE3163;
+			font-size:35px;
+
+		}
+		table ,th,td
+		{
+			border:1px solid black;
+			border-collapse:collapse;
+		}
+		th,td
+		{
+			padding:5px;
+			text-align:left;
+		}
+		}*/
+
+	</style>
+</head>
+
+<p><%= link_to "Back to list", controller: "book", action:'list', class: "back-link"  %></p>
+		<p><%= form_for(:books, url:{controller: "book", action: 'create'}) do |t| %></p>
+<body>
+	<h1>Add Books</h1>
+	<form>
+		<table class="center">
+			<tr>
+				<th>
+					<label for ="bknm" ><b>Book Name</label></th>
+					<td> <%= t.text_field(:name) %></td>
+			</tr>
+
+			<tr>
+				<th>
+					<label for="authrnm"><b> Author Name</label></th>
+					<td> <%= t.text_field(:authrnm)%></td>
+			</tr>
+		<tr>
+			<th>
+				<label for="prce"><b>Price</label></th>
+				<td> <%=t.text_field(:price)%></td>
+			</th>
+		</tr>
+		
+		<tr>
+			<th>
+				<button type="submit">Add Records</button>
+				<%= submit_tag("create book") %>
+				
+			</th>
+		</tr>
+	</table>
+</form>
+</body>
+</html>-->
